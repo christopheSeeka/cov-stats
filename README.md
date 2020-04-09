@@ -71,4 +71,4 @@ You are now connected with your new account with the address displayed on top, c
 
 You can now configure the page and start add entries (make sure to have some waves on this account too)
 
-You can acces your data at localhost:3000
+You can acces your page at localhost:3000
