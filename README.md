@@ -63,7 +63,7 @@ npm start
 
 ## Using the web app
 
-```Got to localhost:3000/admin```
+```Got to domain:3000/admin```
 
 Click on **START**\
 
