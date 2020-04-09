@@ -36,12 +36,7 @@ class Getdata {
         return jsonres.json();
       })
       .then((res) => {
-        // IF ONLY ONE RESULT, RETURN THE VALUE, IF NOT, THE FULL DATA
-        if(res.length == 1){
-          return res[0].value ;
-        }else{
           return res;
-        }
       })
       .catch((err) => {
         console.log(err);

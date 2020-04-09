@@ -18,13 +18,13 @@ let countActive = 0,
 
 // GET/SET PAGE NAME FROM DATA STORAGE
 getdata.getDataByKey(getdata.userAddress + "_name").then((res) => {
-  document.getElementById("title").innerHTML = res;
-  document.title = res;
+  document.getElementById("title").innerHTML = res[0].value;
+  document.title = res[0].value;
 });
 
 // GET/SET PAGE DESCRIPTION FROM DATA STORAGE
 getdata.getDataByKey(getdata.userAddress + "_intro").then((res) => {
-  document.getElementById("introtop").innerHTML = res;
+  document.getElementById("introtop").innerHTML = res[0].value;
 });
 
 // THIS INITIALIZE AND CONFIGURE OUR TABLE USING DATATABLE PLUBGIN, WE ACTIVATE FILTERS, SORTING ETC.
@@ -135,5 +135,6 @@ getdata.getDataByKey(getdata.userAddress+"_counterNum").then(async res => {
   initTable()
 
 }).catch(err => {
+  // WE GET AN ERROR IF THERE IS NO ENTRY FOR THE ACCOUNT
   console.log(err)
 });

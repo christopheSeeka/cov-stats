@@ -65,15 +65,15 @@ document.getElementById("loader").classList.remove("fade0");
     let id = e.currentTarget.value;
     document.getElementById("addEntry").value = "UPDATE CASE NUM " + id;
     let gender = await getdata.getDataByKey(signer._userData.address+"_patient_" + id + "_gender");
-    document.getElementById("gender").value = gender;
+    document.getElementById("gender").value = gender[0].value;
     let age = await getdata.getDataByKey(signer._userData.address+"_patient_" + id + "_age");
-    document.getElementById("age").value = age;
+    document.getElementById("age").value = age[0].value;
     let location = await getdata.getDataByKey(signer._userData.address+"_patient_" + id + "_location");
-    document.getElementById("location").value = location;
+    document.getElementById("location").value = location[0].value;
     let pec = await getdata.getDataByKey(signer._userData.address+"_patient_" + id + "_pec");
-    document.getElementById("pec").value = pec;
+    document.getElementById("pec").value = pec[0].value;
     let status = await getdata.getDataByKey(signer._userData.address+"_patient_" + id + "_status");
-    document.getElementById("status").value = status;
+    document.getElementById("status").value = status[0].value;
   }
   document.getElementById("loader").classList.add("fade0");
 });
@@ -85,15 +85,15 @@ document.getElementById("login").addEventListener("click", function(e){
         
         // GET/SET PAGE NAME FROM DAPP DATA STORAGE
         getdata.getDataByKey(signer._userData.address + "_name").then((res) => {
-          document.getElementById("name").value = res;
-          document.getElementById("title").innerHTML = res;
-          document.title = res;
+          document.getElementById("name").value = res[0].value;
+          document.getElementById("title").innerHTML = res[0].value;
+          document.title = res[0].value;
         });
 
         // GET/SET PAGE DESCRIPTION FROM DAPP DATA STORAGE
         getdata.getDataByKey(signer._userData.address + "_intro").then((res) => {
-          document.getElementById("introtop").innerHTML = res;
-          document.getElementById("intro").value = res;
+          document.getElementById("introtop").innerHTML = res[0].value;
+          document.getElementById("intro").value = res[0].value;
         });
 
         // DISPLAY CURRENT ACCOUNT ADDRESS AND A LINK TO GO GET THE SEED IF NEWLY CREATED ACCOUNT
@@ -103,15 +103,19 @@ document.getElementById("login").addEventListener("click", function(e){
         
         // WE POPULATE THE IDENTIFIANT LIST WITH ALL EXISTING ID FROM THE DAPP DATA STORAGE
         let populateList = await getdata.getDataByKey(signer._userData.address + "_patient_(.*)_identifiant") 
-
+        console.log("before sort : populateList");
+        console.log(populateList);
         // WE SORT THE DATA BY IDENTIFIANT VALUE
         populateList.sort((a, b) => {
           a = a.value;
           b = b.value;
           return a - b;
         });
-
+        console.log("after sort : populateList");
+        console.log(populateList);
         populateList.forEach(id => {
+          console.log("populateList foreach id =");
+          console.log(id);
           let option = document.createElement("option")
           option.value = id.value;
           option.innerHTML = id.value;
