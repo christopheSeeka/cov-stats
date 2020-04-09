@@ -1,0 +1,37 @@
+{-# STDLIB_VERSION 3 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+
+@Callable(i)
+func updateInfos(city: String, intro: String) = {
+    let ownerAddress = i.caller
+    WriteSet([
+        DataEntry(ownerAddress.toString() + "_name", city),
+        DataEntry(ownerAddress.toString() + "_intro", intro)
+    ])
+}
+
+@Callable(i)
+func addUpdateCase(identifiant: Int, gender: String, age: String, location: String, pec: String, status: Int) = {
+    let ownerAddress = i.caller.toString()
+    let counterNum = match this.getInteger(ownerAddress + "_counterNum") {
+        case c: Int => c + 1 
+        case _ => 1
+    }
+    let patientID = match this.getInteger(ownerAddress + "_patient_"+identifiant.toString()+"_identifiant") {
+        case p: Int => p
+        case _ => counterNum
+    }
+    let updateCounter = if(identifiant == 0) then counterNum else patientID
+    if(status != 1 && status != 2 && status != 3 ) then throw("Wrong status")
+    else
+    WriteSet([
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_identifiant", patientID),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_gender", gender),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_age", age),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_pec", pec),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_location", location),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_status", status),
+        DataEntry(ownerAddress + "_counterNum", updateCounter)
+    ])
+}
