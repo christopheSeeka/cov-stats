@@ -1,8 +1,6 @@
 # cov-stats
 
-This web application was developped with educational purpose in mind to demonstrate how easy it is to develop a web app integrating Waves Blockchain.
-
-It allows anyone to set up a web page to track COVID-19 case in a city, region, company or anything in a publicly transparent and immutable way.
+This web application was developped with educational purpose in mind to demonstrate how easy it is to develop a web app integrating Waves Blockchain. 
 
 You can deploy your own version by following the described steps here or simply use it with our online version at https://cov-stats.sign-web.app
 
@@ -65,10 +63,10 @@ npm start
 
 ```Got to domain:3000/admin```
 
-Click on **START**\
+Click on **START**
 
-If you dont have any Waves account yet, you will have to define a password and click sign up\
+If you dont have any Waves account yet, you will have to define a password and click sign up
 
-You are now connected with your new account with the address displayed on top, copy it and past it in the settings.js as this.userAddress\
+You are now connected with your new account with the address displayed on top, copy it and past it in the settings.js as this.userAddress
 
 You can now configure the page and start add entries (make sure to have some waves on this account too)
