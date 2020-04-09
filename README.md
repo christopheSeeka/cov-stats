@@ -51,8 +51,6 @@ Now create a new dApp script (bottom left + sign) and copy / paste the code from
 Then deploy ether by clicking deploy (bottom right) or typing deploy() in the console.
 
 The address of this dApp account is the address to put in settings.js > this.dappAddress\
-We recommand to create a second account to use the webapp as the fee will be lower (smart account transaction fee are higher than regular accounts).\
-So create a second account and add the address of theis account in the settings.js for this.userAddress, also load it with some waves for the transaction fee.
 
 ## Start the web app
 
@@ -62,3 +60,9 @@ Simply run the command:
 npm run build
 npm start
 ```
+
+Got to localhost:3000\
+There is no data since you didn't started yet. Got to localhost:3000\admin and click **START**\
+If you dont have any Waves account yet, you will have to define a password and click sign up\
+You are now connected with your new user account with the address displayed on top, copy it and past it in the settings.js as this.userAddress\
+You can now configure the page and start add entries (make sure to have some waves on this account too)
