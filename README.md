@@ -42,11 +42,10 @@ is the dApp address, the account where you deployed the smart contract, if you w
 
 The easiest way to deploy the smart contract is to go to https://ide.wavesplatform.com, choose the network you want use (upper right settings icon, testnet by default), create a new account (upper right "add account")
 
-You needs to load your account with waves token:\
+**You needs to load your account with waves token:**
 
 For testnet got to the faucet: [https://wavesexplorer.com/testnet/faucet](https://wavesexplorer.com/testnet/faucet)
-
-For mainnet you can get at: https://www.waves.exchange 
+\For mainnet you can get at: https://www.waves.exchange 
 
 Now create a new dApp script (bottom left + sign) and copy / paste the code from ./ride/covid.ride from this repo.
 
