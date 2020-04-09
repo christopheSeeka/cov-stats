@@ -47,9 +47,9 @@ For mainnet you can get at: https://www.waves.exchange
 
 Then deploy ether by clicking deploy (bottom right) or typing deploy() in the console.
 
-The address of this dApp account is the address to put in settings.js > this.dappAddress
-We recommand to create a second address to use the webapp as the fee will be lower (smart account transaction fee are higher).
-So create a second account and add the address in the settings.js at this.userAddress, also load it with some waves for the transaction fee.
+The address of this dApp account is the address to put in settings.js > this.dappAddress\
+We recommand to create a second account to use the webapp as the fee will be lower (smart account transaction fee are higher than regular accounts).\
+So create a second account and add the address of theis account in the settings.js for this.userAddress, also load it with some waves for the transaction fee.
 
 ## Start the web app
 
