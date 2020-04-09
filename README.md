@@ -38,8 +38,10 @@ is the dApp address, the account where you deployed the smart contract, if you w
 
 ## Deploy the smart contract
 
-The easiest way to deploy the smart contract is to go to https://ide.wavesplatform.com, the network you want use (upper right), create a new account (upper right), create a new dApp script (bottom left) and copy / paste the code from ./ride/covid.ride in this repo.\
-Then deploy ether by clicking deploy (bottom right) or typing deploy() in the console.\
+The easiest way to deploy the smart contract is to go to https://ide.wavesplatform.com, choose the network you want use (upper right settings icon), create a new account (upper right), create a new dApp script (bottom left + sign) and copy / paste the code from ./ride/covid.ride from this repo.
+
+Then deploy ether by clicking deploy (bottom right) or typing deploy() in the console.
+
 The address of this account is the address to put in settings.js > this.dappAddress
 
 ## Start the web app
