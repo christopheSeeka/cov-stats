@@ -61,8 +61,14 @@ npm run build
 npm start
 ```
 
-Got to localhost:3000\
-There is no data since you didn't started yet. Got to localhost:3000\admin and click **START**\
+## Using the web app
+
+```Got to localhost:3000/admin```
+
+Click on **START**\
+
 If you dont have any Waves account yet, you will have to define a password and click sign up\
-You are now connected with your new user account with the address displayed on top, copy it and past it in the settings.js as this.userAddress\
+
+You are now connected with your new account with the address displayed on top, copy it and past it in the settings.js as this.userAddress\
+
 You can now configure the page and start add entries (make sure to have some waves on this account too)
