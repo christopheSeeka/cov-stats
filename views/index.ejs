@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container mb-3">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 text-center">
+          <h1 id="title">YOUR NAME HERE</h1>
+          <p id="introtop">Welcome to the Blockchain COVID19 Tracking Web App</p>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-3" id="top_bar">
+      <div class="row text-center">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="row">
+            <div class="col-6 col-sm-3 mb-1 text-info">
+              <div class="wrap p-4">
+                Total: <span class="total">0</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3 mb-1 text-primary">
+              <div class="wrap p-4">
+                Active: <span class="active">0</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3 mb-1 text-success">
+              <div class="wrap p-4">
+                Recovered: <span class="recovered">0</span>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3 mb-1 text-danger">
+              <div class="wrap p-4">
+                Deceased: <span class="deceased">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div id="filtering" class="d-flex mb-3"></div>
+          <table class="w-100 table table-striped" id="results">
+            <thead>
+              <tr>
+                <td>ID</td>
+                <td>GENDER</td>
+                <td>AGE</td>
+                <td>LOCATION</td>
+                <td>PEC*</td>
+                <td>STATUS</td>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="container mt-4">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-1">
+          Page Address: <a href="#" target="_blank" id="pageaddress"></a><br />
+          Smart Contract: <a href="#" target="_blank" id="smartcontract"></a><br />
+        </div>
+        <div class="col-lg-4">
+          *PEC = Pre-Existing Condition<br />
+          <a href="/admin">Manage your COVID19 Stats Page</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="javascripts/bundle-main.js"></script>
+</html>
