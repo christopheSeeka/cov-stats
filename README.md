@@ -34,7 +34,7 @@ is the provider used with Waves Signer to signer your transactions, https://test
 is the address of your Waves account, the account you use to add data into the dApp storage
 
 **dappAddress**\
-is the dApp address, the account where you deployed the smart contract, if you want use our public dApp just use 3NBbHi3Vj5yt37Yv9XZtfwMy7KnZUWSY3uM for testnet and ********************************* for mainnet
+is the dApp address, the account where you deployed the smart contract and where the data will be stored, if you want use our public dApp just use 3NBbHi3Vj5yt37Yv9XZtfwMy7KnZUWSY3uM for testnet and ********************************* for mainnet
 
 ## Deploy the smart contract
 
