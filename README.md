@@ -14,7 +14,7 @@ npm install
 edit the settings.js file:
 
 ```
-this.network = "T" // 
+this.network = "T"
 this.nodeURL = "https://nodes-testnet.wavesnodes.com"
 this.providerUrl = "https://testnet.waves.exchange/signer/"
 this.userAddress = "3NBSNZiKU3h51dyTyMGX2sPdPfyjqBKf2F4"
