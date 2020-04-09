@@ -21,11 +21,20 @@ this.userAddress = "3NBSNZiKU3h51dyTyMGX2sPdPfyjqBKf2F4"
 this.dappAddress = "3NBbHi3Vj5yt37Yv9XZtfwMy7KnZUWSY3uM"
 ```
 
-**network** define the network you want use, T for Testnet and W for Mainnet\
-**nodeURL** define the node that will be used to broadcast and request data, https://nodes-testnet.wavesnodes.com for testnet and https://nodes.wavesplatform.com for Mainnet\
-**providerUrl** is the provider used with Waves Signer to signer your transactions, https://testnet.waves.exchange/signer/ for testnet and "https://waves.exchange/signer/" for Mainnet\
-**userAddress** is the address of your Waves account, the account you use to add data into the dApp storage\
-**dappAddress** is the dApp address, the account where you deployed the smart contract, if you want use our public dApp just use 3NBbHi3Vj5yt37Yv9XZtfwMy7KnZUWSY3uM for testnet and ********************************* for mainnet
+**network**\
+define the network you want use, T for Testnet and W for Mainnet
+
+**nodeURL**\
+define the node that will be used to broadcast and request data, https://nodes-testnet.wavesnodes.com for testnet and https://nodes.wavesplatform.com for Mainnet
+
+**providerUrl**\
+is the provider used with Waves Signer to signer your transactions, https://testnet.waves.exchange/signer/ for testnet and "https://waves.exchange/signer/" for Mainnet
+
+**userAddress**\
+is the address of your Waves account, the account you use to add data into the dApp storage
+
+**dappAddress**\
+is the dApp address, the account where you deployed the smart contract, if you want use our public dApp just use 3NBbHi3Vj5yt37Yv9XZtfwMy7KnZUWSY3uM for testnet and ********************************* for mainnet
 
 ## Deploy the smart contract
 
