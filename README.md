@@ -4,6 +4,8 @@ This web application was developped with educational purpose in mind to demonstr
 
 It allows anyone to set up a web page to track COVID-19 case in a city, region, company or anything in a publicly transparent and immutable way.
 
+You can deploy your own version by following the described steps here or simply use it with our online version at https://cov-stats.sign-web.app
+
 ## Installation
 
 ```
