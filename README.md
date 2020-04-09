@@ -11,7 +11,7 @@ git clone https://github.com/christopheSeeka/cov-stats.git
 npm install
 ```
 
-edit the settings.js file:
+Copy settings.js.sample and rename it into settings.js then edit the following:
 
 ```
 this.network = "T"
