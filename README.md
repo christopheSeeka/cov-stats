@@ -44,8 +44,7 @@ The easiest way to deploy the smart contract is to go to https://ide.wavesplatfo
 
 **You needs to load your account with waves token:**
 
-For testnet got to the faucet: [https://wavesexplorer.com/testnet/faucet](https://wavesexplorer.com/testnet/faucet)
-\For mainnet you can get at: https://www.waves.exchange 
+For testnet got to the faucet: [https://wavesexplorer.com/testnet/faucet](https://wavesexplorer.com/testnet/faucet) &nbsp;For mainnet you can get at: https://www.waves.exchange 
 
 Now create a new dApp script (bottom left + sign) and copy / paste the code from ./ride/covid.ride from this repo.
 
