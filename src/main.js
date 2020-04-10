@@ -41,38 +41,83 @@ let initTable = function(){
          "sInfo": "Showing _START_ to _END_ of _TOTAL_"
        },
       initComplete: function () {
+        var counting = 0;
         this.api()
           .columns()
           .every(function () {
             
             var column = this;
-
-            var select = $('<select class="custom-select mr-2"><option value="">All</option></select>')
+            var select = $('<select class="custom-select mr-2 select_'+counting+'"><option value="">All</option></select>')
               .appendTo("#filtering")
               .on("change", function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? "^" + val + "$" : "", true, false).draw();
               });
-            column
-              .data()
-              .unique()
-              .sort((a, b) => {
-                return a - b;
-              })
-              .each(function (d, j) {
-                select.append('<option value="' + d + '">' + d + "</option>");
-              });
+            
+              if (counting == 2){
+                                  // WE WANT A SPECIAL SELECT FILTER FOR AGE COLUMN WITH RANGE SELECTION
+                                  select.append(
+                                    '<option value="" class="1-25">1-25</option><option value="" class="26-50">26-50</option><option value="" class="51-75">51-75</option><option value="" class="76">76+</option>'
+                                  );
+                                }else{
+                column
+                  .data()
+                  .unique()
+                  .sort((a, b) => {
+                    return a - b;
+                  })
+                  .each(function (d, j) {
+                    select.append('<option value="' + d + '">' + d + "</option>");
+                  });
+              }
+                
+              counting ++
           });
+
+       
         document.querySelector(".dataTables_length select").classList.add("custom-select");
       },
     });
   }
-
   // ADD COLUMNS NAME TO FILTERS
   document.querySelectorAll("thead td").forEach(function(th, index){
     document.querySelector(`#filtering .custom-select:nth-child(${index+1})`).options[0].textContent += " "+th.textContent.toLowerCase()
   })
+
+  // HERE WE OVERRIDE THE DATATABLE FILTER TO CONVERT THE AGE COLUMN INTO A RANGE FILTER
+  $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+
+      let min = 1
+      let max = 130
+      let age = parseFloat(data[2]); // use data for the age column
+
+      switch ($(".select_2 option:selected").attr("class")) {
+        case "1-25": min = 1; max = 25;
+        break;
+
+        case "26-50": min = 26; max = 50;
+        break;
+
+        case "51-75": min = 51; max = 75;
+        break;
+
+        case "76": min = 76; max = 130;
+        break;
+
+        default:
+      }
+
+      if ((isNaN(min) && isNaN(max)) ||
+        (isNaN(min) && age <= max) ||
+        (min <= age && isNaN(max)) ||
+        (min <= age && age <= max)) {
+        return true;
+      }
+
+  });
 }
+
+
 
 // WE GET THE TOTAL NUMBER OF CASES FOR THE CURRENT ACCOUNT/PAGE THEN WE PROCESS THE DATA
 getdata.getDataByKey(getdata.userAddress+"_counterNum").then(async res => {

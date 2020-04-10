@@ -188,6 +188,7 @@ document.getElementById("addEntry").addEventListener("click", async function(e){
                   // TX HAS NOT PROPAGATED YET, CALL AGAIN
                   setTimeout(checkStateChange, 1000);
                 } else {
+                  console.log(res.stateChanges);
                   let listId = document.getElementById("identifiant");
                   let newOptions = `<option value="${res.stateChanges.data[0].value}">${res.stateChanges.data[0].value}</option>`;
                   listId.innerHTML += newOptions;
