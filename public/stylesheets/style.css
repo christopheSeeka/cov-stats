@@ -150,3 +150,23 @@ table.dataTable thead .sorting_desc {
 #accordionWrapper{
   display: none;
 }
+#results_info{
+  padding-top: 6px;
+}
+@media(max-width:992px){
+  body {
+    padding: 15px 0px;
+  }
+  #filtering{
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #filtering .custom-select {
+    width: 48%;
+    margin-right: 0 !important;
+    margin-bottom: 5px;
+  }
+  #admin .btn-primary.w-50 {
+    width: 75% !important;
+  }
+}

@@ -142,7 +142,6 @@ document.getElementById("addEntry").addEventListener("click", async function(e){
     // WE CREATE OUR SIGNER TRANSACTION DATA OBJECT
     const data = {
       dApp: getdata.dappAddress,
-      fee: 500000,
       call: {
         function: "addUpdateCase",
         args: [
@@ -220,7 +219,6 @@ document.getElementById("accountInfo").addEventListener("click", function(e){
     let intro = document.getElementById("intro").value;
     const data = {
         dApp: getdata.dappAddress,
-        fee: 500000,
         call: {
             function: 'updateInfos',
             args: [

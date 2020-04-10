@@ -32,19 +32,34 @@ let initTable = function(){
   if (getdata.userAddress != "" && getdata.userAddress != "undefined") {
     $("#results").DataTable({
       dom:'rt<"showing d-flex justify-content-between mt-3"li><"d-flex justify-content-center mb-3"p><"clear">',
+      rowReorder: {
+          selector: 'td:nth-child(2)'
+      },
       responsive: true,
+      "order": [[ 0, "desc" ]],
+      "oLanguage": {
+         "sInfo": "Showing _START_ to _END_ of _TOTAL_"
+       },
       initComplete: function () {
         this.api()
           .columns()
           .every(function () {
+            
             var column = this;
+
             var select = $('<select class="custom-select mr-2"><option value="">All</option></select>')
               .appendTo("#filtering")
               .on("change", function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? "^" + val + "$" : "", true, false).draw();
               });
-            column.data().unique().sort().each(function (d, j) {
+            column
+              .data()
+              .unique()
+              .sort((a, b) => {
+                return a - b;
+              })
+              .each(function (d, j) {
                 select.append('<option value="' + d + '">' + d + "</option>");
               });
           });
@@ -52,6 +67,11 @@ let initTable = function(){
       },
     });
   }
+
+  // ADD COLUMNS NAME TO FILTERS
+  document.querySelectorAll("thead td").forEach(function(th, index){
+    document.querySelector(`#filtering .custom-select:nth-child(${index+1})`).options[0].textContent += " "+th.textContent.toLowerCase()
+  })
 }
 
 // WE GET THE TOTAL NUMBER OF CASES FOR THE CURRENT ACCOUNT/PAGE THEN WE PROCESS THE DATA
