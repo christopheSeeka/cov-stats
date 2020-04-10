@@ -170,3 +170,12 @@ table.dataTable thead .sorting_desc {
     width: 75% !important;
   }
 }
+@media(max-width:580px) {
+  .dataTables_length {
+    width: 70%;
+    margin: auto;
+  }
+  .showing{
+    flex-direction: column;
+  }
+}
