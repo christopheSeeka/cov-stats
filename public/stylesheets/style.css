@@ -32,10 +32,11 @@ a {
   border: solid 1px #e1e1e1;
   padding: 15px;
   background-color: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
 }
-
+.loading{
+  background-color: aliceblue;
+}
 .navbar{
   padding: 15px 10px;
 }
