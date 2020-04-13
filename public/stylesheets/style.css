@@ -1,10 +1,20 @@
+body, html{
+  height: 100%;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 a {
   color: #00B7FF;
+}
+#admin{
+  background-color: #f8f8f8;
 }
 #admin form input,
 #admin form select{
@@ -18,6 +28,14 @@ a {
 #admin p{
   margin-bottom: 0.5rem;
 }
+#admin .wrap_top{
+  border: solid 1px #e1e1e1;
+  padding: 15px;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
 .navbar{
   padding: 15px 10px;
 }

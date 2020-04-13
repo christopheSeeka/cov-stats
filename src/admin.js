@@ -241,3 +241,18 @@ document.getElementById("accountInfo").addEventListener("click", function(e){
           displayAlert("error", err.message ? err.message : err);
         });
 })
+
+// HERE IS JUST TO CENTER CORRECTLY DEPENDING ON SCREEN SIZE, SWITCHING THE FLEX ALIGNMENT
+let loadResize = function(e){
+  console.log("resize")
+  if(document.querySelector('.wrap_admin').offsetHeight > document.querySelector('body').offsetHeight){ 
+    document.querySelector('body').style.justifyContent = "flex-start" 
+    document.querySelector('body').style.height = "auto"
+  }else{
+    document.querySelector("body").style.justifyContent = "center"; 
+    document.querySelector("body").style.height = "100%";
+  }
+}
+$(".collapse").on("hidden.bs.collapse", loadResize);
+window.addEventListener("load", loadResize);
+window.addEventListener("resize", loadResize);

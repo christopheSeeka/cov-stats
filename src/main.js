@@ -76,6 +76,7 @@ let initTable = function(){
 
        
         document.querySelector(".dataTables_length select").classList.add("custom-select");
+        document.querySelector(".loading").style.display = "none"
       },
     });
   }
