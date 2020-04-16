@@ -198,7 +198,7 @@ getdata.getDataByKey(getdata.userAddress+"_counterNum").then(async res => {
 
       switch (entry.status) {
         case "1":
-          status = "ACTIVE";
+          status = "CONFIRMED";
           countActive++;
           break;
 
