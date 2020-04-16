@@ -15,6 +15,9 @@ body#admin{
 a {
   color: #00B7FF;
 }
+#wrap_home .wrap span{
+  padding-left: 5px;
+}
 #admin{
   background-color: #f8f8f8;
 }
