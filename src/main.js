@@ -146,6 +146,7 @@ let initChart = function(data){
         valueFormatString: "DD-MMM",
         labelFontSize: 13,
         titleFontSize: 13,
+        margin: 10,
         lineColor: "#bbbbbb",
         gridColor: "#bbbbbb",
       },
