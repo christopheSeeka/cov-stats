@@ -1,10 +1,12 @@
-body, html{
+body#admin, html{
   height: 100%;
 }
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 'Roboto', sans-serif;
+}
+body#admin{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -172,18 +174,35 @@ table.dataTable thead .sorting_desc {
 #results_info{
   padding-top: 6px;
 }
+#cta{
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: -25px;
+  background-color: #6A8DD1;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  transition: all .4s ease;
+}
+#cta:hover{
+  background-color: #314a7a;
+}
 @media(max-width:992px){
   body {
     padding: 15px 0px;
   }
   #filtering{
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   #filtering .custom-select {
     width: 48%;
     margin-right: 0 !important;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  #filtering .custom-select:last-child {
+    margin-bottom: 0px;
   }
   #admin .btn-primary.w-50 {
     width: 75% !important;

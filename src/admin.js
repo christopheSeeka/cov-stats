@@ -139,18 +139,24 @@ document.getElementById("addEntry").addEventListener("click", async function(e){
     // WE DEFINE THE TYPE OF ACTION, ETHER ADD OR UPDATE
     let actionType = document.getElementById("identifiant").value == 0 ? "add" : "update"
 
+    var d = new Date();
+    var yesterday = d.setDate(d.getDate() - 5);
     // WE CREATE OUR SIGNER TRANSACTION DATA OBJECT
     const data = {
       dApp: getdata.dappAddress,
       call: {
         function: "addUpdateCase",
         args: [
-          { type: "integer", value: document.getElementById("identifiant").value },
+          {
+            type: "integer",
+            value: document.getElementById("identifiant").value,
+          },
           { type: "string", value: document.getElementById("gender").value },
           { type: "integer", value: document.getElementById("age").value },
           { type: "string", value: document.getElementById("location").value },
           { type: "string", value: document.getElementById("pec").value },
-          { type: "integer", value: document.getElementById("status").value }
+          { type: "integer", value: document.getElementById("status").value },
+          { type: "integer", value: yesterday }, // Date.now()
         ],
       },
     };

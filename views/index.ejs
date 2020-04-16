@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https:////cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js"></script>
     <script src="https://cdn.datatables.net/rowreorder/1.2.6/js/dataTables.rowReorder.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <div id="wrap_home">
     <div class="container mb-3">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 text-center">
+          <a href="/admin" id="cta">Manage your page</a>
           <h1 id="title"></h1>
           <p id="introtop" class="mb-0 mb-sm-3"></p>
         </div>
@@ -27,6 +31,9 @@
       <div class="row text-center">
         <div class="col-lg-10 offset-lg-1">
           <div class="row">
+            <div class="col-12">
+              <div id="chartContainer" style="height: 150px; width: 100%;" class="mb-4"></div>
+            </div>
             <div class="col-6 col-sm-3 mb-3 mb-sm-1 text-info">
               <div class="wrap p-2 p-md-4 d-flex align-items-center justify-content-center">
                 Total: <span class="total">0</span>
@@ -60,6 +67,7 @@
             <thead>
               <tr>
                 <td>ID</td>
+                <td>DATE</td>
                 <td>GENDER</td>
                 <td>AGE</td>
                 <td>LOCATION</td>
@@ -80,14 +88,15 @@
         <div class="col-lg-6 offset-lg-1">
           Page Address: <a href="#" target="_blank" id="pageaddress"></a><br />
           Smart Contract: <a href="#" target="_blank" id="smartcontract"></a><br />
-          Get the sources: <a href="https://github.com/christopheSeeka/cov-stats" target="_blank">www.github.com/christopheSeeka/cov-stats</a>
+          
         </div>
         <div class="col-lg-4">
           *PEC = Pre-Existing Condition<br />
-          <a href="/admin">Manage your COVID19 Stats Page</a>
+          <a href="https://github.com/christopheSeeka/cov-stats" target="_blank">Get the Github sources</a>
         </div>
       </div>
     </footer>
+    </div>
   </body>
   <script src="javascripts/bundle-main.js"></script>
 </html>
