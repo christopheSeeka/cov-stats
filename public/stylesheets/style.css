@@ -197,7 +197,7 @@ tr,td{
 }
 @media(max-width:992px){
   body {
-    padding: 15px 0px;
+    padding: 35px 0px 15px 0px;
   }
   #filtering{
     flex-wrap: wrap;
@@ -213,6 +213,10 @@ tr,td{
   }
   #admin .btn-primary.w-50 {
     width: 75% !important;
+  }
+  #cta{
+    right: 0px;
+    top: -35px;
   }
 }
 @media(max-width:580px) {
