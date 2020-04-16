@@ -177,6 +177,9 @@ table.dataTable thead .sorting_desc {
 #results_info{
   padding-top: 6px;
 }
+tr,td{
+  text-align: center;
+}
 #cta{
   position: absolute;
   display: block;
@@ -190,6 +193,7 @@ table.dataTable thead .sorting_desc {
 }
 #cta:hover{
   background-color: #314a7a;
+  text-decoration: none;
 }
 @media(max-width:992px){
   body {
