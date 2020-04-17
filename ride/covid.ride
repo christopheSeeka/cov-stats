@@ -12,7 +12,7 @@ func updateInfos(city: String, intro: String) = {
 }
 
 @Callable(i)
-func addUpdateCase(identifiant: Int, gender: String, age: String, location: String, pec: String, status: Int) = {
+func addUpdateCase(identifiant: Int, gender: String, age: Int, location: String, pec: String, status: Int, date: Int) = {
     let ownerAddress = i.caller.toString()
     let counterNum = match this.getInteger(ownerAddress + "_counterNum") {
         case c: Int => c + 1 
@@ -22,6 +22,8 @@ func addUpdateCase(identifiant: Int, gender: String, age: String, location: Stri
         case p: Int => p
         case _ => counterNum
     }
+
+    let json = "{\"identifiant\":\""+patientID.toString()+"\",\"gender\":\""+gender+"\",\"age\":\""+age.toString()+"\",\"pec\":\""+pec+"\",\"location\":\""+location+"\",\"date\":\""+date.toString()+"\",\"status\":\""+status.toString()+"\"}"
     let updateCounter = if(identifiant == 0) then counterNum else patientID
     if(status != 1 && status != 2 && status != 3 ) then throw("Wrong status")
     else
@@ -32,6 +34,8 @@ func addUpdateCase(identifiant: Int, gender: String, age: String, location: Stri
         DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_pec", pec),
         DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_location", location),
         DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_status", status),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_date", date),
+        DataEntry(ownerAddress + "_patient_"+patientID.toString()+"_json", json),
         DataEntry(ownerAddress + "_counterNum", updateCounter)
     ])
 }

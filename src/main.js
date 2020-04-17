@@ -1,7 +1,3 @@
-// IMPORT DATATABLE
-import "datatables.net";
-import "datatables.net-buttons";
-
 // NEEDS FOR WEBPACK, JUST IMPORT IT :)
 import "regenerator-runtime/runtime.js";
 
