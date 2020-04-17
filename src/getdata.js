@@ -10,7 +10,7 @@ class Getdata {
     this.userAddress = config.get("userAddress")
     this.nodeUrl = config.get("nodeURL")
     this.providerUrl = config.get("providerUrl");
-    this.explorerSegment = config.get("network") == "T" ? "/testnet":""
+    this.explorerSegment = config.get("network") == "T" ? "/testnet" : ""
 
     // CHECK IF THERE IS A PAGE ADDRESS IN FIRST URL SEGMENT, IF YES USE IT,
     // IF NOT, GET IT FROM SETTINGS, ELSE REQUIRE AN ADDRESS
