@@ -132,8 +132,8 @@ document.getElementById("addEntry").addEventListener("click", async function(e){
     // WE DEFINE THE TYPE OF ACTION, ETHER ADD OR UPDATE
     let actionType = document.getElementById("identifiant").value == 0 ? "add" : "update"
 
-    var d = new Date();
-    var yesterday = d.setDate(d.getDate() - 5);
+/*     var d = new Date();
+    var yesterday = d.setDate(d.getDate() - 5); */
     // WE CREATE OUR SIGNER TRANSACTION DATA OBJECT
     const data = {
       dApp: getdata.dappAddress,
@@ -149,7 +149,7 @@ document.getElementById("addEntry").addEventListener("click", async function(e){
           { type: "string", value: document.getElementById("location").value },
           { type: "string", value: document.getElementById("pec").value },
           { type: "integer", value: document.getElementById("status").value },
-          { type: "integer", value: yesterday }, // Date.now()
+          { type: "integer", value: Date.now() },
         ],
       },
     };

@@ -24,14 +24,9 @@ class Getdata {
     }
   }
 
-  // DEFINE A SIMPLE GETTER TO ACCESS OUR GLOBAL VARS
-  get(key) {
-    return this[key];
-  }
-
   // THIS METHOD WILL REQUEST DATA BY KEY / REGEX TO THE BLOCKCHAIN NODE
   async getDataByKey(keyname) {
-    let name = await fetch(`${this.nodeUrl}/addresses/data/${this.dappAddress}?matches=${keyname}`)
+    let data = await fetch(`${this.nodeUrl}/addresses/data/${this.dappAddress}?matches=${keyname}`)
       .then((jsonres) => {
         return jsonres.json();
       })
@@ -41,7 +36,7 @@ class Getdata {
       .catch((err) => {
         console.log(err);
       });
-    return name;
+    return data;
   }
 }
 
