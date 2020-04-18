@@ -1,5 +1,5 @@
 // IMPORT THE CONFIG FILE AND INIT IT
-const Config = require("../settings");
+import Config from "../settings";
 let config = new Config();
 
 class Getdata {
@@ -45,4 +45,4 @@ class Getdata {
   }
 }
 
-module.exports = Getdata;
+export default Getdata;

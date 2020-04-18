@@ -2,9 +2,6 @@
 import Signer from "@waves/signer";
 import Provider from "@waves.exchange/provider-web";
 
-// NEEDS FOR WEBPACK, JUST IMPORT IT :)
-import "regenerator-runtime/runtime.js";
-
 // IMPORT GETDATA TOOLS, THIS FILE INCLUDE METHODS USED IN DIFFERENT PAGES TO AVOID REPETITION
 import Getdata from "./getdata";
 // INIT THE TOOLS
@@ -103,19 +100,15 @@ document.getElementById("login").addEventListener("click", function(e){
         
         // WE POPULATE THE IDENTIFIANT LIST WITH ALL EXISTING ID FROM THE DAPP DATA STORAGE
         let populateList = await getdata.getDataByKey(signer._userData.address + "_patient_(.*)_identifiant") 
-        console.log("before sort : populateList");
-        console.log(populateList);
+
         // WE SORT THE DATA BY IDENTIFIANT VALUE
         populateList.sort((a, b) => {
           a = a.value;
           b = b.value;
           return a - b;
         });
-        console.log("after sort : populateList");
-        console.log(populateList);
+
         populateList.forEach(id => {
-          console.log("populateList foreach id =");
-          console.log(id);
           let option = document.createElement("option")
           option.value = id.value;
           option.innerHTML = id.value;
@@ -194,7 +187,6 @@ document.getElementById("addEntry").addEventListener("click", async function(e){
                   // TX HAS NOT PROPAGATED YET, CALL AGAIN
                   setTimeout(checkStateChange, 1000);
                 } else {
-                  console.log(res.stateChanges);
                   let listId = document.getElementById("identifiant");
                   let newOptions = `<option value="${res.stateChanges.data[0].value}">${res.stateChanges.data[0].value}</option>`;
                   listId.innerHTML += newOptions;
@@ -250,7 +242,6 @@ document.getElementById("accountInfo").addEventListener("click", function(e){
 
 // HERE IS JUST TO CENTER CORRECTLY DEPENDING ON SCREEN SIZE, SWITCHING THE FLEX ALIGNMENT
 let loadResize = function(e){
-  console.log("resize")
   if(document.querySelector('.wrap_admin').offsetHeight > document.querySelector('body').offsetHeight){ 
     document.querySelector('body').style.justifyContent = "flex-start" 
     document.querySelector('body').style.height = "auto"

@@ -1,6 +1,3 @@
-// NEEDS FOR WEBPACK, JUST IMPORT IT :)
-import "regenerator-runtime/runtime.js";
-
 // IMPORT GETDATA TOOLS, THIS FILE INCLUDE METHODS USED IN DIFFERENT PAGES TO AVOID REPETITION
 import Getdata from "./getdata";
 // INIT THE TOOLS
