@@ -3,10 +3,10 @@
 {-# SCRIPT_TYPE ACCOUNT #-}
 
 @Callable(i)
-func updateInfos(city: String, intro: String) = {
+func updateInfos(name: String, intro: String) = {
     let ownerAddress = i.caller
     WriteSet([
-        DataEntry(ownerAddress.toString() + "_name", city),
+        DataEntry(ownerAddress.toString() + "_name", name),
         DataEntry(ownerAddress.toString() + "_intro", intro)
     ])
 }
@@ -14,17 +14,18 @@ func updateInfos(city: String, intro: String) = {
 @Callable(i)
 func addUpdateCase(identifiant: Int, gender: String, age: Int, location: String, pec: String, status: Int, date: Int) = {
     let ownerAddress = i.caller.toString()
-    let counterNum = match this.getInteger(ownerAddress + "_counterNum") {
-        case c: Int => c + 1 
+    let currentCounterNum = match this.getInteger(ownerAddress + "_counterNum") {
+        case c: Int => c
         case _ => 1
     }
     let patientID = match this.getInteger(ownerAddress + "_patient_"+identifiant.toString()+"_identifiant") {
         case p: Int => p
-        case _ => counterNum
+        case _ => currentCounterNum + 1
     }
 
     let json = "{\"identifiant\":\""+patientID.toString()+"\",\"gender\":\""+gender+"\",\"age\":\""+age.toString()+"\",\"pec\":\""+pec+"\",\"location\":\""+location+"\",\"date\":\""+date.toString()+"\",\"status\":\""+status.toString()+"\"}"
-    let updateCounter = if(identifiant == 0) then counterNum else patientID
+    
+    let updateCounter = if(identifiant == 0) then currentCounterNum + 1 else currentCounterNum
     if(status != 1 && status != 2 && status != 3 ) then throw("Wrong status")
     else
     WriteSet([
